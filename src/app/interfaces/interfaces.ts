@@ -7,6 +7,12 @@ export interface User {
     role?: string
 }
 
+export interface Empresa {
+    nombre?: string;
+    _id?: string;
+    direccion?: string;
+    email?: string;
+}
 
 export interface Cliente {
     nombres?: string,
