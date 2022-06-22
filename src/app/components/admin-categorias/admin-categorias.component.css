@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+}
+
+.content-button-confirm {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2%;
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .bx-main-admin-categorias {
+        gap: 40px;
+    }
+
+    .main-card {
+        margin: 40px 0;
+    }
+}

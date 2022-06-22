@@ -1,0 +1,146 @@
+<mat-card class="main-card">
+    <div class="row bx-main-admin-categorias">
+        <div class="col-md-4 col-sm-12">
+
+
+            <form [formGroup]="formProveedor">
+                <mat-card class="example-card">
+                    <mat-card-title class="mb5">Nuevo Proveedor</mat-card-title>
+                    <mat-card-content>
+                        <mat-form-field appearance="standard">
+
+                            <input formControlName="_id" class="hidden" matInput>
+                            <input formControlName="user_id" class="hidden" matInput>
+                            <input formControlName="nombre" placeholder="Nombre" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('nombre')">
+                                {{getErrorMessage('nombre')}}
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field appearance="standard">
+
+                            <input formControlName="ruc" placeholder="Ruc" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('ruc')">
+                                {{getErrorMessage('ruc')}}
+                            </mat-error>
+
+                        </mat-form-field>
+
+                        <mat-form-field appearance="standard">
+
+                            <input formControlName="celular" placeholder="Celular" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('celular')">
+                                {{getErrorMessage('celular')}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <mat-form-field appearance="standard">
+
+                            <input formControlName="direccion" placeholder="Dirección" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('direccion')">
+                                {{getErrorMessage('direccion')}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <mat-form-field appearance="standard">
+
+                            <input type="email" formControlName="email" placeholder="Email" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('email')">
+                                {{getErrorMessage('email')}}
+                            </mat-error>
+
+                        </mat-form-field>
+                        <mat-form-field appearance="standard">
+
+                            <input formControlName="estado" placeholder="Estado" autocomplete="off" matInput>
+
+                            <mat-error *ngIf="isValidField('estado')">
+                                {{getErrorMessage('estado')}}
+                            </mat-error>
+
+                        </mat-form-field>
+
+
+                        <div class="content-button-confirm ">
+                            <button id="btn-form-reset-proveedor" mat-stroked-button color="warn" type="reset"
+                                (click)="clear()">Reset</button>
+                            <button *ngIf="!editActive" mat-stroked-button color="primary"
+                                (click)="createReactiveProveedor()" [disabled]="formProveedor.invalid">Crear</button>
+                            <button *ngIf="editActive" mat-stroked-button color="primary" (click)="editarProducto()"
+                                [disabled]="formProveedor.invalid">Actualizar</button>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </form>
+
+
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <mat-form-field appearance="standard">
+                <mat-label>Buscar</mat-label>
+                <input autocomplete="off" matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>
+
+            <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+
+
+                    <ng-container matColumnDef="nombre">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                        <td mat-cell *matCellDef="let row"> {{row.nombre}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="ruc">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Ruc</th>
+                        <td mat-cell *matCellDef="let row"> {{row.ruc}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="celular">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Celular </th>
+                        <td mat-cell *matCellDef="let row"> {{row.celular}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="direccion">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+                        <td mat-cell *matCellDef="let row"> {{row.direccion}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                        <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="estado">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
+                        <td mat-cell *matCellDef="let row"> {{row.estado}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </th>
+                        <td mat-cell *matCellDef="let row">
+                            <button mat-stroked-button color="primary" class="mr-2"
+                                (click)="selectProducto(row)">Editar</button>
+                            <button mat-stroked-button color="warn" (click)="borrarProveedor(row._id)">Borrar</button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</mat-card>

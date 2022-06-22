@@ -1,0 +1,58 @@
+<!-- <div class="login-box">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="user-box">
+            <input [(ngModel)]="user.username" name="username" autocomplete="off" type="text" required>
+            <label>Username</label>
+        </div>
+        <div class="user-box">
+            <input [(ngModel)]="user.password" (keypress)="$event.key === 'Enter'? login(loginForm) : ''"
+                name="password" type="password" required>
+            <label>Password</label>
+        </div>
+        <a type="submit" (click)="login(loginForm)">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+        </a>
+    </form>
+</div> -->
+
+<div class="main__login flex-center">
+    <!-- <img src="../../../assets/img/fondo1.jpg" alt=""> -->
+    <div class="login-box">
+        <mat-card class="card__content">
+            <form [formGroup]="formLogin" (ngSubmit)="reactiveLogin()">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" autocomplete="off" matInput>
+
+                    <mat-error *ngIf="isValidField('email')">
+                        {{getErrorMessage('email')}}
+                    </mat-error>
+
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput [type]="hide ? 'password' : 'text'">
+
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+                    <mat-error *ngIf="isValidField('password')">
+                        {{getErrorMessage('password')}}
+                    </mat-error>
+                </mat-form-field>
+
+
+                <button class="w-100" [disabled]="formLogin.invalid" mat-raised-button color="primary">Login</button>
+
+            </form>
+        </mat-card>
+    </div>
+</div>

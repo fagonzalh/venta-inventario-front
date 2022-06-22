@@ -1,0 +1,101 @@
+.main-card-ingresos {
+    padding: 16px 10%;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bx-input-fields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ingreso-title {
+    font-size: 20px;
+}
+
+.bx-add-item {
+    display: flex;
+    align-items: center;
+}
+
+.txt-subtitle {
+    font-size: 12px;
+    margin: 12px 0;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #4b4848;
+}
+
+.content-button-confirm {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.bx-ingreso-title {
+    display: flex;
+    align-items: center;
+}
+
+.bx-ingreso-title p:first-child {
+    text-align: left;
+    padding: 0;
+}
+
+
+.bx-ingreso-title p:nth-child(2) {
+    text-align: right;
+    padding: 0;
+}
+
+
+.form-ingresos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+.bx-add-item input {
+    text-align: center;
+}
+
+.trash {
+    color: #ec6464;
+}
+
+.row-no-data,
+.row-no-data td {
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (max-width: 678px) {
+
+    .main-card-ingresos {
+        padding: 16px 0;
+    }
+
+    .bx-input-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+
+
+    .ingreso-title {
+        font-size: 18px;
+    }
+
+    .bx-add-item {
+        /* flex-direction: column; */
+    }
+}

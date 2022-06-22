@@ -1,0 +1,193 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/css/normalize.css';
+
+html, body {
+    height: 100%;
+    overflow-y: auto !important;
+}
+
+body {
+    min-width: auto !important;
+}
+
+.red {
+    color: red;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mat-cell {
+    padding: 0 10px !important;
+    font-size: 12px;
+}
+
+table {
+    width: max-content;
+}
+
+.mat-elevation-z8 {
+    overflow: auto;
+}
+
+.mt-2 {
+    margin-top: 2%;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.gap-2 {
+    gap: 2%;
+}
+
+.gap-15 {
+    gap: 15px
+}
+
+.mt-5 {
+    margin-top: 5%;
+}
+
+
+.mb5 {
+    margin-bottom: 5% !important;
+}
+
+.mr-2 {
+    margin-right: 2%;
+}
+
+.mt-3 {
+    margin-top: 3% !important;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+span.mat-button-toggle-label-content {
+    padding: 0 13px;
+}
+
+.snackbar__success {
+    background: #496edd;
+    color: white;
+}
+
+.snackbar__error {
+    background: #a63b28;
+    color: white;
+}
+
+.snackbar__warning {
+    background: #ffc409;
+    color: white;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button:focus {
+    outline: none;
+}
+
+.main-footer {
+    position: absolute;
+    bottom: 0;
+}
+
+
+/*** ESTILOS SCROLL BAR ***/
+
+*::-webkit-scrollbar {
+    -webkit-appearance: none
+}
+
+*::-webkit-scrollbar:vertical {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-button:increment, *::-webkit-scrollbar-button {
+    display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+    height: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/*********************/
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 1250px) {
+
+    .main-footer {
+        bottom: inherit;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {}
+
+@media screen and (min-width: 2100px) {}
+
+
+
+
+@media print {
+    html, body {
+        height: auto;
+        overflow-y: visible !important;
+    }
+}
+
+
+.mat-chip-list-wrapper {
+    justify-content: center !important;
+    padding: 0 0 10px 0 !important;
+}
+
+.mat-chip {
+    font-size: 12px;
+}

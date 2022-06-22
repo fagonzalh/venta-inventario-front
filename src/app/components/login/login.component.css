@@ -1,0 +1,74 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+}
+
+/** INICIO ESTILOS DEL FORMULARIO **/
+
+.login-box {
+    width: 20rem;
+    height: auto;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+}
+
+/** FIN ESTILOS DEL FORMULARIO **/
+
+/* ESTILOS MATFIELD*/
+
+.example-container .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+}
+
+.example-right-align {
+    text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button, input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+}
+
+input.example-right-align {
+    -moz-appearance: textfield;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.main__login {
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/img/fondo4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.main__login img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card__content {
+    padding: 15% 10%;
+}
+
+.login-box {
+    opacity: 0.8;
+    -webkit-box-shadow: 0px 2px 22px -7px rgba(0, 0, 0, 0.89);
+    -moz-box-shadow: 0px 2px 22px -7px rgba(0, 0, 0, 0.89);
+    box-shadow: 0px 2px 22px -7px rgba(0, 0, 0, 0.89);
+}
+
+mat-form-field {
+    margin-bottom: 3%;
+}

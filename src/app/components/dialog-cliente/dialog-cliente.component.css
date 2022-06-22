@@ -1,0 +1,38 @@
+div button {
+    margin: 2% 0 !important;
+}
+
+mat-card-content div {
+    display: flex;
+}
+
+mat-card-content div mat-form-field {
+    margin: 5px;
+}
+
+ion-icon {
+    font-size: 20px;
+}
+
+.clear__btn {
+    font-size: 16px;
+    color: #ffc409;
+}
+
+.c_success {
+    color: #2dd36f;
+}
+
+
+/** MEDIA QUERIES **/
+
+@media screen and (max-width: 992px) {
+    mat-card-content div {
+        flex-direction: column;
+    }
+
+    mat-card-content div.flex-around {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

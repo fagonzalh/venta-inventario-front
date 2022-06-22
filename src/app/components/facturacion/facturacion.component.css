@@ -1,0 +1,102 @@
+.lista-productos-factura, .lista-valores-cobrar, .item__observacion {
+    border: 1px solid #e0e0e0;
+    padding: 0;
+    border-radius: 5px;
+
+}
+
+.item-lista-productos-factura {
+    display: grid;
+    grid-template-columns: 50% 30% 20%;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.lista-valores-cobrar ion-label, .item__observacion ion-label {
+    font-size: 12px;
+    margin: 0;
+}
+
+.lista-valores-cobrar ion-item {
+    --min-height: 25px;
+}
+
+.lista-valores-cobrar {
+    padding: 10px 0;
+}
+
+.precio__producto__cart__list {
+    text-align: right;
+}
+
+.action__buttons__facturacion {
+    padding: 4% 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.action__buttons__facturacion ion-button {
+    font-size: 12px;
+    --padding-top: .7em;
+    --padding-start: 0.9em;
+    --padding-end: 0.9em;
+    --padding-bottom: .7em;
+    height: 3.1em;
+}
+
+.no__data {
+    text-align: center;
+    margin-top: 0;
+    padding: 4%;
+}
+
+ion-select {
+    --padding-start: 0px;
+}
+
+.btn__action__fac {
+    width: 22%;
+}
+
+ion-button, ion-button ion-label {
+    font-size: 11px !important;
+}
+
+ion-item {
+    width: 100%;
+}
+
+.precio__producto__cart__list, .nombre__producto__cart__list {
+    font-size: 12px;
+}
+
+.toggle__minus__add {
+    border-radius: 30px;
+    width: fit-content;
+}
+
+.toggle__minus__add, .toggle__minus__add i {
+    font-size: 10px;
+}
+
+.cant__prod {
+    font-size: 12px;
+}
+
+.mat-button-toggle-checked {
+    background-color: transparent;
+}
+
+
+
+.mat-snack-bar-container {
+    background-color: #6777ef !important;
+    color: white !important;
+}
+
+.select__mesa {
+    width: 100%;
+    position: absolute;
+}

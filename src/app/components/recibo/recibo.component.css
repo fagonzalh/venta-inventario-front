@@ -1,0 +1,104 @@
+.mat-dialog-content {
+    max-height: inherit;
+    padding: 0;
+}
+
+.recibo {
+    margin: auto;
+    overflow: hidden;
+    font-size: 11px;
+    border: 1px solid lightgrey;
+    padding: 2%;
+    border-radius: 20px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+}
+
+
+.success-snackbar {
+    background-color: #6777ef !important;
+    color: white !important;
+}
+
+.toolbar-title-recibo {
+    background: #6777ef;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+}
+
+mat-toolbar {
+    background-color: white;
+    padding: 0;
+}
+
+
+
+mat-form-field input {
+    text-align: right;
+}
+
+* h5, h4, p {
+    margin: 0 !important;
+    line-height: 20px;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-recibo {
+    font-size: 11px;
+}
+
+.list_header, .list_datos, .list_pedidos, .list_price, .list_footer {
+    border-bottom: 2px solid #545353;
+    border-bottom-style: dotted;
+    padding: 3% 0px;
+}
+
+
+
+.list_footer {
+    border-bottom: 0;
+}
+
+.text-tks {
+    font-size: 14px;
+}
+
+
+.toolbar__buttons ion-button {
+    font-size: 10px;
+    width: 50%;
+}
+
+ion-grid, ion-row, #content_pdf {
+    height: 100%;
+}
+
+
+.total {
+    font-size: 15px;
+}
+
+
+.header__item__recibo,
+.item-recibo {
+    display: grid;
+    grid-template-columns: 60% 20% 20%;
+
+}
+
+.header__item__recibo p {
+    font-size: 10px;
+
+}
+
+
+@media print {
+    .nonprint {
+        display: none;
+    }
+}

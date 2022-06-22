@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="formProduct" (ngSubmit)="test(formProduct)">
+        <!-- <mat-form-field>
+            <input type="text" matInput placeholder="States Group" formControlName="stateGroup" required
+                [matAutocomplete]="autoGroup">
+            <mat-autocomplete #autoGroup="matAutocomplete">
+                <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                    <mat-option *ngFor="let name of group.names" [value]="name">
+                        {{name}}
+                    </mat-option>
+                </mat-optgroup>
+            </mat-autocomplete>
+        </mat-form-field> -->
+
+
+        <mat-form-field>
+            <input type="text" matInput formControlName="categoria_id" required [matAutocomplete]="auto">
+
+            <mat-autocomplete (optionSelected)="selectOpt($event)" #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let item of categorias" [value]="item">
+                    {{item.nombre}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+
+        <button type="submit">Enviar</button>
+    </form>
+</div>

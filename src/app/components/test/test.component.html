@@ -1,0 +1,56 @@
+<div class="main__ventas">
+
+    <div class="">
+        <mat-card class="example-card">
+            <mat-card-header class="d-block">
+                <mat-card-subtitle>Menú</mat-card-subtitle>
+                <ion-segment mode="md" scrollable value="favorite">
+                    <ion-segment-button (click)="seleccionarCategoria(cat._id)" *ngFor="let cat of categorias"
+                        value="{{cat.nombre}}">
+                        <ion-label>{{cat.nombre}}</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="content__cards">
+                    <section *ngFor="let producto of productos" class="cards">
+                        <article class="card card--1">
+                            <div class="card__info-hover">
+                                <button mat-mini-fab (click)="addCart(producto)" class="btn__add">
+                                    <mat-icon>add</mat-icon>
+                                </button>
+                            </div>
+                            <div class="card__img"
+                                [style]="(producto.image | img: producto.categoria_id._id) | domSanitizer"></div>
+                            <a class="card_link">
+                                <div class="card__img--hover"
+                                    [style]="(producto.image | img: producto.categoria_id._id) | domSanitizer">
+                                </div>
+                            </a>
+                            <div class="card__info">
+                                <span class="card__category"> {{producto.categoria_id.nombre}}</span>
+                                <h5 class="card__title">{{producto.nombre}}</h5>
+                                <span class="card__by">
+                                    <ion-icon slot="start" class="cash-icon" name="cash-outline"></ion-icon> <a href="#"
+                                        class="card__author" title="author">
+                                        {{producto.precio}}</a>
+                                </span>
+                            </div>
+                        </article>
+                    </section>
+
+                </div>
+
+
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+
+    <div class="">
+        <app-facturacion></app-facturacion>
+    </div>
+
+</div>

@@ -1,0 +1,135 @@
+<div mat-dialog-content>
+
+    <div class="flex-center">
+        <div class="col-6">
+            <div id="content_pdf" #contentPdf class="recibo">
+
+                <div class="list_header">
+                    <h5 class="text-center">Cevicheria La Guayaca</h5>
+                    <p class="text-center">Alborada 5ta etapa mz 12 v99</p>
+                    <h5 class="text-center mt-2">RECIBO</h5>
+                </div>
+
+                <div class="list_datos">
+                    <div class="flex-between">
+                        <p>Cliente:</p>
+                        <p>{{venta.cliente.nombres + ' ' + venta.cliente.apellidos}}</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>Identificación:</p>
+                        <p>{{venta.cliente.identificacion}}</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>Correo</p>
+                        <p>{{venta.cliente.email}}</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>Fecha:</p>
+                        <p>01/01/2022</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>Hora:</p>
+                        <p>14h00</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>Mesa:</p>
+                        <p>003</p>
+                    </div>
+                </div>
+
+
+                <div class="list_pedidos">
+                    <div class="header__item__recibo">
+                        <p>PRODUCTO</p>
+                        <p class="text-center">CANTIDAD</p>
+                        <p class="text-center">TOTAL</p>
+                    </div>
+                    <div *ngFor="let producto of venta.productos" class="flex-between item-recibo">
+                        <p>{{producto.nombre}}</p>
+                        <p class="text-center">{{producto.cantidad}}</p>
+                        <p class="text-center">{{producto.subtotal}}</p>
+                    </div>
+                </div>
+
+
+                <div class="list_price">
+                    <div class="flex-between">
+                        <h5 class="total">TOTAL</h5>
+                        <h5 class="total">{{venta.total}}</h5>
+                    </div>
+                    <div class="flex-between">
+                        <p>RECIBE</p>
+                        <p>{{recibe_dinero}}</p>
+                    </div>
+                    <div class="flex-between">
+                        <p>CAMBIO</p>
+                        <p>{{devolucion_dinero}}</p>
+                    </div>
+                </div>
+
+
+                <div class="list_footer">
+                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                        sapiente
+                        earum est
+                        officia
+                        dolores eaque..</p>
+                    <h5 class="text-center text-tks mt-2">
+                        GRACIAS POR SU COMPRA!!!
+                    </h5>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-6 ">
+
+            <mat-toolbar class="text-center toolbar-title-recibo">
+                <ion-title>Forma de Pago</ion-title>
+            </mat-toolbar>
+
+            <mat-toolbar>
+                <ion-segment mode="md" value="all">
+                    <ion-segment-button value="all">
+                        <ion-label>Efectivo</ion-label>
+                    </ion-segment-button>
+                    <ion-segment-button value="favorites">
+                        <ion-label>Tarjeta</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+            </mat-toolbar>
+
+
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Total</mat-label>
+                <input matInput type="number" class="example-right-align" readonly [value]="venta.total">
+                <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Recibe</mat-label>
+                <input matInput type="number" class="example-right-align" (keyup)="calcularDevolucion(recibe_dinero)"
+                    [(ngModel)]="recibe_dinero">
+                <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" floatLabel="always">
+                <mat-label>Devuelve</mat-label>
+                <input matInput type="number" class="example-right-align" readonly [value]="devolucion_dinero">
+                <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+
+
+            <mat-toolbar class="toolbar__buttons">
+                <ion-button slot="start" color="danger">
+                    <ion-icon name="trash-bin-outline"></ion-icon>
+                    CANCELAR
+                </ion-button>
+                <ion-button slot="end" (click)="finalizarVenta()" [disabled]="devolucion_dinero < 0" color="success">
+                    <ion-icon slot="start" name="bag-check-outline"></ion-icon>
+                    COMPRAR
+                </ion-button>
+            </mat-toolbar>
+
+        </div>
+    </div>
+</div>

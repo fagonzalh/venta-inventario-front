@@ -1,0 +1,7 @@
+.main_content_404 {
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}

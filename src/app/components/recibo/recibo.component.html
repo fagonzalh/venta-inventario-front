@@ -1,0 +1,79 @@
+<div id="content_pdf" #contentPdf class="recibo">
+
+    <div class="list_header">
+        <h5 class="text-center">Cevicheria La Guayaca</h5>
+        <p class="text-center">Alborada 5ta etapa mz 12 v99</p>
+        <h5 class="text-center mt-2">RECIBO</h5>
+    </div>
+
+    <div class="list_datos">
+        <div class="flex-between">
+            <p>Cliente:</p>
+            <p>{{venta.cliente_id.nombres + ' ' + venta.cliente_id.apellidos}}</p>
+        </div>
+        <div class="flex-between">
+            <p>Identificación:</p>
+            <p>{{venta.cliente_id.identificacion}}</p>
+        </div>
+        <div class="flex-between">
+            <p>Correo</p>
+            <p>{{venta.cliente_id.email}}</p>
+        </div>
+        <div class="flex-between">
+            <p>Fecha:</p>
+            <p>{{venta.cliente_id.created_at}}</p>
+        </div>
+        <div class="flex-between">
+            <p>Mesa:</p>
+            <p>{{venta.mesa}}</p>
+        </div>
+    </div>
+
+
+    <div class="list_pedidos">
+        <div class="header__item__recibo">
+            <p>PRODUCTO</p>
+            <p class="text-center">CANTIDAD</p>
+            <p class="text-center">TOTAL</p>
+        </div>
+        <div *ngFor="let producto of venta.productos" class="flex-between item-recibo">
+            <p>{{producto.nombre}}</p>
+            <p class="text-center">{{producto.cantidad}}</p>
+            <p class="text-center">{{producto.subtotal}}</p>
+        </div>
+    </div>
+
+
+    <div class="list_price">
+        <div class="flex-between">
+            <h5 class="total">TOTAL</h5>
+            <h5 class="total">$ {{venta.total}}</h5>
+        </div>
+        <div class="flex-between">
+            <p>RECIBE</p>
+            <p>$ {{venta.recibe_dinero}}</p>
+        </div>
+        <div class="flex-between">
+            <p>CAMBIO</p>
+            <p>$ {{venta.devolucion_dinero}}</p>
+        </div>
+    </div>
+
+
+    <div class="list_footer">
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
+            sapiente
+            earum est
+            officia
+            dolores eaque..</p>
+        <h5 class="text-center text-tks mt-2">
+            GRACIAS POR SU COMPRA!!!
+        </h5>
+    </div>
+
+</div>
+
+<div class="mt-5 flex-center gap-2">
+    <button mat-raised-button color="warn">Cerrar</button>
+    <button mat-raised-button color="primary">Imprimir</button>
+</div>
